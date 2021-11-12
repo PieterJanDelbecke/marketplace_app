@@ -1,0 +1,20 @@
+<h1>Form</h1>
+
+<%= form_with model: item do |form|%>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <br><br>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+    <br><br>
+    <%= form.label :price %>
+    <%= form.number_field :price%>
+    <br><br>
+    <%= form.label :new %>
+    <%= form.number_field :new%>
+    <br><br>
+    <%= form.label :sold %>
+    <%= form.number_field :sold%>
+    <br><br>
+    <%= form.submit%>
+<% end %>
