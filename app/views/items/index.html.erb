@@ -2,7 +2,9 @@
 
 <ul>
     <% @items.each do |item| %>
-        <%# <% link_to item[:name], item_path[:id]%> %>
+        <td><%= link_to 'Show', item %></td>
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <ul>
             <li> Name: <%= item[:name] %> </li>
             <li> Description: <%= item[:description] %> <li>
