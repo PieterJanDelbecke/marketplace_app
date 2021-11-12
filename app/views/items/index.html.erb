@@ -1,1 +1,15 @@
 <h1>Index Items Page </h1>
+
+<ul>
+    <% @items.each do |item| %>
+        <%# <% link_to item[:name], item_path[:id]%> %>
+        <ul>
+            <li> Name: <%= item[:name] %> </li>
+            <li> Description: <%= item[:description] %> <li>
+            <li> Price: <%= item[:price] %> <li>
+            <li> new: <%= item[:new] %> <li>
+            <li> sold: <%= item[:sold] %> <li>
+        </ul>
+        <br> 
+    <% end%>
+</ul>
