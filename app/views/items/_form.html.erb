@@ -10,11 +10,17 @@
     <%= form.label :price %>
     <%= form.number_field :price%>
     <br><br>
-    <%= form.label :new %>
-    <%= form.number_field :new%>
+    <% for option in news %>
+        <div> 
+            <%= form.radio_button :new, option %>
+            <%= form.label "new#{option}".to_sym, option%>
+        <div>
+    <% end %>   
     <br><br>
     <%= form.label :sold %>
     <%= form.number_field :sold%>
+    
     <br><br>
+
     <%= form.submit%>
 <% end %>

@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
     before_action :set_item, only: %i[ show edit update destroy ]
+    before_action :set_state_bike
 
     # GET /items or /items.json
     def index
@@ -64,5 +65,9 @@ class ItemsController < ApplicationController
       # Only allow a list of trusted parameters through.
       def item_params
         params.require(:item).permit(:name, :description, :price, :new, :sold, :user_id)
+      end
+
+      def set_state_bike
+        @news = Item.news.keys
       end
 end
