@@ -17,6 +17,10 @@
         <div>
     <% end %>   
     <br><br>
+    <%= form.label :picture %>
+    <%= form.file_field :picture, accept:'image/png,image/jpg,image/jpeg' %>
+
+
     <%= form.label :sold %>
     <%= form.number_field :sold%>
     
