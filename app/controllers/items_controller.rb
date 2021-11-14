@@ -19,6 +19,9 @@ class ItemsController < ApplicationController
   
     # GET /items/1/edit
     def edit
+        authorize @item
+    rescue Pundit::NotAuthorizedError
+        redirect_to root_path, alert: "you are not authorized to edit this item" 
     end
   
     # POST /items or /items.json
@@ -37,6 +40,10 @@ class ItemsController < ApplicationController
   
     # PATCH/PUT /items/1 or /items/1.json
     def update
+        authorize @item
+    rescue Pundit::NotAuthorizedError
+        redirect_to root_path, alert: "you are not authorized to edit this item" 
+    else
       respond_to do |format|
         if @item.update(item_params)
           format.html { redirect_to items_path, notice: "Item was successfully updated." }
