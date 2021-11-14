@@ -1,17 +1,18 @@
+<%=  link_to "Sell Bike", new_item_path %>
 <h1>Index Items Page </h1>
+<div class="index_container">
+        <% @items.each do |item| %>
+            <div class="index_card">
+                   <h3> <%= item[:name] %> </h3>
+                <ul>
+                    <li> Description: <%= item[:description] %> <li>
+                    <li> Price: <%= item[:price] %> <li>
+                    <li> new: <%= item[:new] %> <li>
+                    <li> sold: <%= item[:sold] %> <li>
+                </ul>
+                <br> 
+                <td><%= link_to 'Show', item %></td>
+            </div>
 
-<ul class="card">
-    <% @items.each do |item| %>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <ul>
-            <li> Name: <%= item[:name] %> </li>
-            <li> Description: <%= item[:description] %> <li>
-            <li> Price: <%= item[:price] %> <li>
-            <li> new: <%= item[:new] %> <li>
-            <li> sold: <%= item[:sold] %> <li>
-        </ul>
-        <br> 
-    <% end%>
-</ul>
+        <% end%>
+</div>
