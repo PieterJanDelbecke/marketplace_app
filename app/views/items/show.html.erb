@@ -12,5 +12,7 @@
     <br> 
 </div>
 <%= link_to 'Back', :back %>
-<%= link_to 'Edit', edit_item_path(@item) %>
-<%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% if policy(@item).update? %>
+    <%= link_to 'Edit', edit_item_path(@item) %>
+    <%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
