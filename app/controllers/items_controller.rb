@@ -57,6 +57,10 @@ class ItemsController < ApplicationController
   
     # DELETE /items/1 or /items/1.json
     def destroy
+        authorize @item
+    rescue Pundit::NotAuthorizedError
+        redirect_to root_path, alert: "you are not authorized to destroy this item" 
+    else
       @item.destroy
       respond_to do |format|
         format.html { redirect_to items_url, notice: "Item was successfully destroyed." }
