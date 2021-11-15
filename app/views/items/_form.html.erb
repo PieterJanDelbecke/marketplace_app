@@ -20,9 +20,13 @@
     <%= form.label :picture %>
     <%= form.file_field :picture, accept:'image/png,image/jpg,image/jpeg' %>
     <br><br>
+    <% session[:sold] = 1 %>
+    <%if false %>
     <%= form.label :sold %>
     <%= form.number_field :sold%>
+    <% end %>
     <br><br>
     <%= form.submit%>
 <% end %>
+<br><br>
 <%= link_to 'Back', :back %>

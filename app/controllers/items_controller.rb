@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
       @item = current_user.items.new(item_params)
       respond_to do |format|
         if @item.save
-          format.html { redirect_to items_path, notice: "Item was successfully created." }
+          format.html { redirect_to @item, notice: "Item was successfully created." }
           format.json { render :show, status: :created, location: @item }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
     else
       respond_to do |format|
         if @item.update(item_params)
-          format.html { redirect_to items_path, notice: "Item was successfully updated." }
+          format.html { redirect_to @item, notice: "Item was successfully updated." }
           format.json { render :show, status: :ok, location: @item }
         else
           format.html { render :edit, status: :unprocessable_entity }

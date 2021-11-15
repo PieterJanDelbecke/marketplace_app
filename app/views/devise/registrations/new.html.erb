@@ -25,6 +25,49 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  <br>
+  <%= f.fields_for :detail, resource.build_detail do |detail_form| %>
+      <div class="field">
+        <%= detail_form.label :first_name %>
+        <%= detail_form.text_field :first_name, autofocus: true %>
+      </div>
+      <br>
+      <div class="field">
+        <%= detail_form.label :last_name %>
+        <%= detail_form.text_field :last_name %>
+      </div>
+      <br>
+      <div class="field">
+        <%= detail_form.label :street_number %>
+        <%= detail_form.number_field :street_number %>
+      </div>
+      <br>
+      <div class="field">
+        <%= detail_form.label :street_name %>
+        <%= detail_form.text_field :street_name %>
+      </div> 
+      <br> 
+      <div class="field">
+        <%= detail_form.label :suburb %>
+        <%= detail_form.text_field :suburb %>
+      </div>
+      <br>
+      <div class="field">
+        <%= detail_form.label :postcode %>
+        <%= detail_form.number_field :postcode %>
+      </div>
+      <br>
+      <div class="field">
+        <%= detail_form.label :state %>
+        <%= detail_form.text_field :state %>
+      </div>
+      <br>
+      <div class="field">
+        <%= detail_form.label :phone_number %>
+        <%= detail_form.number_field :phone_number %>
+      </div>
+    <% end %>
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>
