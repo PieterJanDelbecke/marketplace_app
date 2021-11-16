@@ -5,7 +5,7 @@
     <%= form.text_field :name %>
     <br><br>
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, size: "60x10" %>
     <br><br>
     <%= form.label :price %>
     <%= form.number_field :price%>
@@ -20,11 +20,7 @@
     <%= form.label :picture %>
     <%= form.file_field :picture, accept:'image/png,image/jpg,image/jpeg' %>
     <br><br>
-    <% session[:sold] = 1 %>
-    <%if false %>
-    <%= form.label :sold %>
-    <%= form.number_field :sold%>
-    <% end %>
+    <%= form.hidden_field :sold, value: 1 %>
     <br><br>
     <%= form.submit%>
 <% end %>
