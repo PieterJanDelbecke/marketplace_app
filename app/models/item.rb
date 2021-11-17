@@ -4,6 +4,6 @@ class Item < ApplicationRecord
 
   has_one_attached :picture
 
-  enum new: { brand_new: 1, second_hand: 0}
+  # enum new: { brand_new: 1, second_hand: 0}
 
 end

@@ -10,19 +10,25 @@
     <%= form.label :price %>
     <%= form.number_field :price%>
     <br><br>
-    <% for option in news %>
-        <div> 
-            <%= form.radio_button :new, option %>
-            <%= form.label "new#{option}".to_sym, option%>
-        <div>
-    <% end %>   
+    <%= form.select :new, [["New",1],["second hand", 0]] %>
+ 
     <br><br>
     <%= form.label :picture %>
     <%= form.file_field :picture, accept:'image/png,image/jpg,image/jpeg' %>
     <br><br>
-    <%= form.hidden_field :sold, value: 1 %>
+    <%= form.hidden_field :sold, value: 0 %>
     <br><br>
     <%= form.submit%>
 <% end %>
 <br><br>
 <%= link_to 'Back', :back %>
+
+
+    <% if false %>
+    <% for option in news %>
+        <div> 
+            <%= form.radio_button :new, option %>
+            <%= form.label "new#{option}".to_sym, option%>
+        <div>
+    <% end %> 
+    <% end %> 

@@ -12,11 +12,11 @@ class BookingsController < ApplicationController
 
     def create
         # puts params
-        @current_item = params[:current_item]
-        @booking = Booking.create(user_id: current_user.id , item_id: @current_item)
-        Item.find(@current_item).update_attribute(:sold, 1)
+        @confirmed_item = params[:confirmed_item]
+        @booking = Booking.create(user_id: current_user.id , item_id: @confirmed_item)
+        Item.find(@confirmed_item).update_attribute(:sold, 1)
         
-        redirect_to root_path
+        redirect_to new_payment_path
     end
 
     
