@@ -6,12 +6,12 @@ class BookingsController < ApplicationController
     end
 
     def new
-        # @current_item = params[current_item]
-        @booking = Booking.new
+        id = params[:current_item]
+        @current_item = Item.find(id)
     end
 
     def create
-        puts params
+        # puts params
         @current_item = params[:current_item]
         @booking = Booking.create(user_id: current_user.id , item_id: @current_item)
         # byebug
