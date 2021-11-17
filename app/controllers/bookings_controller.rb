@@ -1,17 +1,20 @@
 class BookingsController < ApplicationController
     before_action :authenticate_user!
-    before-action :set_item
 
     def index
     end
 
     def new
+        # @item = Item.find(params[:id])
+        @item = Item.last
         @booking = Booking.new
     end
 
     def create
-        user = current_user
-        @booking = @item.add_user(user)
+        # user = current_user
+        # @booking = @item.add_user(user)
+
+        @booking = Booking.create(user_id: current_user.id , item_id: 21)
         redirect_to root_path
     end
 
@@ -21,7 +24,7 @@ class BookingsController < ApplicationController
     private 
     
     def bookings_params
-        params.require(:booking).permit(:item_id)
+        params.require(:booking).permit(:item_id, :user_id)
     end
 
 
