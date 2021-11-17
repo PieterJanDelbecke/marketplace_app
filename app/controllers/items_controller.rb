@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
     before_action :authenticate_user!
     before_action :set_item, only: %i[ show edit update destroy ]
+    # before_action :set_current_item, only: %i[ show edit update destroy ]
     before_action :set_state_bike
 
     # GET /items or /items.json
@@ -82,4 +83,8 @@ class ItemsController < ApplicationController
       def set_state_bike
         @news = Item.news.keys
       end
+
+    # def set_current_item
+    #     @current_item = Item.find(params[:id])
+    # end
 end
