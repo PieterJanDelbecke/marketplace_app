@@ -14,7 +14,8 @@ class BookingsController < ApplicationController
         # puts params
         @current_item = params[:current_item]
         @booking = Booking.create(user_id: current_user.id , item_id: @current_item)
-        # byebug
+        Item.find(@current_item).update_attribute(:sold, 1)
+        
         redirect_to root_path
     end
 
