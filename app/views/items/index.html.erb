@@ -4,6 +4,9 @@
         <% @items.each do |item| %>
             <% if item.sold == 0  %>
                 <div class="index_card">
+                    <% if item.picture.attached? %>
+                    <%= image_tag item.picture, class:"index_image"%>
+                    <% end %>
                     <h3> <%= item[:name] %> </h3>
                     <ul>
                         <li> Description: <%= item.description %> <li>

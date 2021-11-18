@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :bookings
   resources :payments
   devise_for :users
+  
 end

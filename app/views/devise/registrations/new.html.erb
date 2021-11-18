@@ -28,32 +28,32 @@
   <br>
   <%= f.fields_for :detail, resource.build_detail do |detail_form| %>
       <div class="field">
-        <%= detail_form.label :first_name %>
+        <%= detail_form.label :first_name %><br>
         <%= detail_form.text_field :first_name, autofocus: true %>
       </div>
       <br>
       <div class="field">
-        <%= detail_form.label :last_name %>
+        <%= detail_form.label :last_name %><br>
         <%= detail_form.text_field :last_name %>
       </div>
       <br>
       <div class="field">
-        <%= detail_form.label :street_number %>
+        <%= detail_form.label :street_number %><br />
         <%= detail_form.number_field :street_number %>
       </div>
       <br>
       <div class="field">
-        <%= detail_form.label :street_name %>
+        <%= detail_form.label :street_name %><br>
         <%= detail_form.text_field :street_name %>
       </div> 
       <br> 
       <div class="field">
-        <%= detail_form.label :suburb %>
+        <%= detail_form.label :suburb %><br>
         <%= detail_form.text_field :suburb %>
       </div>
       <br>
       <div class="field">
-        <%= detail_form.label :postcode %>
+        <%= detail_form.label :postcode %><br>
         <%= detail_form.number_field :postcode %>
       </div>
       <br>
@@ -62,10 +62,11 @@
       </div>
       <br>
       <div class="field">
-        <%= detail_form.label :phone_number %>
+        <%= detail_form.label :phone_number %> <br>
         <%= detail_form.number_field :phone_number %>
       </div>
     <% end %>
+    <br>
 
 
   <div class="actions">
@@ -74,3 +75,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+
