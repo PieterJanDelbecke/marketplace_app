@@ -2,17 +2,18 @@
 <h1>Index Items Page </h1>
 <div class="index_container">
         <% @items.each do |item| %>
-            <div class="index_card">
-                   <h3> <%= item[:name] %> </h3>
-                <ul>
-                    <li> Description: <%= item[:description] %> <li>
-                    <li> Price: <%= item[:price] %> <li>
-                    <li> new: <%= item[:new] %> <li>
-                    <li> sold: <%= item[:sold] %> <li>
-                </ul>
-                <br> 
-                <td><%= link_to 'Show', item %></td>
-            </div>
-
+            <% if item.sold == 0  %>
+                <div class="index_card">
+                    <h3> <%= item[:name] %> </h3>
+                    <ul>
+                        <li> Description: <%= item.description %> <li>
+                        <li> Price: <%= item.price %> <li>
+                        <li> new: <%= item[:new] %> <li>
+                        <li> sold: <%= item.sold %> <li>
+                    </ul>
+                    <br> 
+                    <td><%= link_to 'Show', item %></td>
+                </div>
+            <% end %>
         <% end%>
 </div>
