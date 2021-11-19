@@ -1,22 +1,41 @@
-<%=  link_to "Sell Bike", new_item_path %>
+
 <h1>Index Items Page </h1>
+<div class="row">
+    <% @items.each do |item| %>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <% if item.picture.attached? %>
+                <%= image_tag item.picture, class:"card-img-top"%>
+                <% end %>
+                <div class="card-body">
+                    <h5 class="card-title"><%= item.name %></h5>
+                    <p class="card-text item-description"><%= item.description %></p>
+                    <p class="card-text">$<%= item.price %><%= link_to 'Show', item , class: "btn btn-primary btn-right" %></p>
+                </div>
+            </div>
+        <div>
+    <% end %>
+</div>
+
+
+
+<%if false %>
 <div class="index_container">
         <% @items.each do |item| %>
-            <% if item.sold == 0  %>
-                <div class="index_card">
-                    <% if item.picture.attached? %>
-                    <%= image_tag item.picture, class:"index_image"%>
-                    <% end %>
-                    <h3> <%= item[:name] %> </h3>
-                    <ul>
-                        <li> Description: <%= item.description %> <li>
-                        <li> Price: <%= item.price %> <li>
-                        <li> new: <%= item[:new] %> <li>
-                        <li> sold: <%= item.sold %> <li>
-                    </ul>
-                    <br> 
-                    <td><%= link_to 'Show', item %></td>
-                </div>
-            <% end %>
-        <% end%>
+            <div class="index_card">
+                <% if item.picture.attached? %>
+                <%= image_tag item.picture, class:"index_image"%>
+                <% end %>
+                <h3> <%= item[:name] %> </h3>
+                <ul>
+                    <li> Description: <%= item.description %> <li>
+                    <li> Price: <%= item.price %> <li>
+                    <li> new: <%= item[:new] %> <li>
+                    <li> sold: <%= item.sold %> <li>
+                </ul>
+                <br> 
+                <td><%= link_to 'Show', item %></td>
+            </div>
+        <% end %>
 </div>
+<% end %>
