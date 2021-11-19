@@ -4,11 +4,16 @@
     <div class="row">
         <div class="col-md-6">
             <h1 class="display-4"><%= @item.name %></h1>
-            <p class="lead"> <%= @item.description %>
+            <p class="lead"> <%= @item.description %></p>
             <hr class="my-4">
             <p class="lead">
+                <% if policy(@item).update? %>
+                <%= link_to 'Edit', edit_item_path(@item), class:"btn btn-primary btn-lg" %>
+                <%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-primary btn-lg" %>
+                <% else %>
                 <%= button_to 'Order', new_booking_path, method: :get, params: {current_item: @item.id}, class:"btn btn-primary btn-lg" %>
-
+                <% end %>
+            </p>
         </div>
         <div class="col-md-6">
             <% if @item.picture.attached?%>
@@ -17,6 +22,8 @@
         </div>
     </div>
 </div>
+<%= link_to 'Back', :back, class:"btn btn-primary btn-lg" %>
+
 
 
 
