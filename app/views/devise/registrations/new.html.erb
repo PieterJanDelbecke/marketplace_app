@@ -39,7 +39,7 @@
       <br>
       <div class="field">
         <%= detail_form.label :street_number %><br />
-        <%= detail_form.number_field :street_number %>
+        <%= detail_form.number_field :street_number, min: 1 %>
       </div>
       <br>
       <div class="field">
@@ -54,7 +54,7 @@
       <br>
       <div class="field">
         <%= detail_form.label :postcode %><br>
-        <%= detail_form.number_field :postcode %>
+        <%= detail_form.number_field :postcode,  min:1, max: 9999 %>
       </div>
       <br>
       <div class="field">
@@ -63,11 +63,10 @@
       <br>
       <div class="field">
         <%= detail_form.label :phone_number %> <br>
-        <%= detail_form.number_field :phone_number %>
+        <%= detail_form.number_field :phone_number ,min: 1 %>
       </div>
     <% end %>
     <br>
-
 
   <div class="actions">
     <%= f.submit "Sign up" %>
