@@ -1,5 +1,4 @@
-<h1>Form</h1>
-
+<%= item.errors.full_messages.first if item.errors.any? %>
 <%= form_with model: item do |form|%>
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -8,9 +7,9 @@
     <%= form.text_area :description, size: "60x10" %>
     <br><br>
     <%= form.label :price %>
-    <%= form.number_field :price%>
+    <%= form.number_field :price, min: 1 %>
     <br><br>
-    <%= form.select :new, [["New",1],["second hand", 0]] %>
+    <%= form.select :new, [["Second hand", 0],["New",1]] %>
  
     <br><br>
     <%= form.label :picture %>
@@ -24,12 +23,3 @@
 <%= link_to 'Back', :back %>
 
 
-
-    <% if false %>
-    <% for option in news %>
-        <div> 
-            <%= form.radio_button :new, option %>
-            <%= form.label "new#{option}".to_sym, option%>
-        <div>
-    <% end %> 
-    <% end %> 

@@ -27,36 +27,3 @@
 
 
 
-
-
-
-
-
-
-
-<% if false %>
-
-if @item.picture.attached?
-
-<div class="row">
-    <br><br>
-    <%= image_tag @item.picture if @item.picture.attached?%>
-     <ul>
-        <li> Name: <%= @item[:name] %> </li>
-        <li> Description: <%= @item[:description] %> <li>
-        <li> Price: <%= @item[:price] %> <li>
-        <li> new: <%= @item[:new] %> <li>
-        <li> sold: <%= @item[:sold] %> <li>
-    </ul>
-    <br> 
-</div>
-<%= link_to 'Back', :back %>
-<% if policy(@item).update? %>
-    <%= link_to 'Edit', edit_item_path(@item) %>
-    <%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% else %>
-    <%# <%= button_to 'Order', bookings_path, method: :post, params: {current_item: @item.id} %> %>
-    <%= button_to 'Order', new_booking_path, method: :get, params: {current_item: @item.id} %>
-
-<% end %>
-<% end %>
