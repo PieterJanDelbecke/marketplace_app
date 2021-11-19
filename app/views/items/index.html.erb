@@ -13,29 +13,6 @@
                     <p class="card-text">$<%= item.price %><%= link_to 'Show', item , class: "btn btn-primary btn-right" %></p>
                 </div>
             </div>
-        <div>
+        </div>
     <% end %>
 </div>
-
-
-
-<%if false %>
-<div class="index_container">
-        <% @items.each do |item| %>
-            <div class="index_card">
-                <% if item.picture.attached? %>
-                <%= image_tag item.picture, class:"index_image"%>
-                <% end %>
-                <h3> <%= item[:name] %> </h3>
-                <ul>
-                    <li> Description: <%= item.description %> <li>
-                    <li> Price: <%= item.price %> <li>
-                    <li> new: <%= item[:new] %> <li>
-                    <li> sold: <%= item.sold %> <li>
-                </ul>
-                <br> 
-                <td><%= link_to 'Show', item %></td>
-            </div>
-        <% end %>
-</div>
-<% end %>
