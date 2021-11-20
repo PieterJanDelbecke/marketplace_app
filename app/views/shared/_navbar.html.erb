@@ -20,6 +20,7 @@
         <li class="nav-item">
             <%= link_to "Sell Bike", new_item_path, class:"nav-link" %>
         </li>
+        <li class="navbar-text"><%= current_user.username if user_signed_in? %></li>
       </ul>
     </div>
   </div>
