@@ -1,9 +1,11 @@
 class ItemsController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, only: %i[new edit destroy]
     before_action :set_item, only: %i[ show edit update destroy ]
     # before_action :set_current_item, only: %i[ show edit update destroy ]
     # before_action :set_state_bike
 
+    def landings_page
+    end
     # GET /items or /items.json
     def index
       @items = Item.all
