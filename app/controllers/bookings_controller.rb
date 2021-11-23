@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
     # before_action :set_current_item
 
     def index
+        @bookings = Booking.all
     end
 
     def new

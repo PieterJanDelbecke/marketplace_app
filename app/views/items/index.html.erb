@@ -4,13 +4,15 @@
     <% @items.each do |item| %>
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
-                <% if item.picture.attached? %>
-                <%= image_tag item.picture, class:"card-img-top"%>
-                <% end %>
-                <div class="card-body">
-                    <h5 class="card-title"><%= item.name %></h5>
-                    <p class="card-text item-description"><%= item.description %></p>
-                    <p class="card-text">$<%= item.price %><%= link_to 'Show', item , class: "btn btn-primary btn-right" %></p>
+                <div class="card-background">
+                    <% if item.picture.attached? %>
+                    <%= image_tag item.picture, class:"card-img-top"%>
+                    <% end %>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= item.name %></h5>
+                        <p class="card-text item-description"><%= item.description %></p>
+                        <p class="card-text">$<%= item.price %><%= link_to 'Show', item , class: "btn btn-outline-dark btn-right" %></p>
+                    </div>
                 </div>
             </div>
         </div>
