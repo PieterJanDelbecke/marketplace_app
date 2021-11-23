@@ -3,50 +3,38 @@
 <h3>Bought Items</h3>
 
 <table class="table">
-  <thead>
     <tr>
-      <th scope="col">#ID</th>
-      <th scope="col">Name Item</th>
-      <th scope="col">Seller</th>
-      <th scope="col">Buyer</th>
+      <th >Bike</th>
+      <th >Seller</th>
+      <th >Price</th>
     </tr>
-  </thead>
-  <tbody>
     <% @bookings.each do |booking| %>
         <%if booking.user.id == current_user.id %>
             <tr>
-                <th scope="row"> <%= booking.id  %><th>
-                <td> <%= booking.item.name%><td>
-                <td> <%= booking.item.user.username%><td>
-                <td> <%= booking.user.username%><td>
+                <td><%= booking.item.name %></td>
+                <td><%= booking.item.user.username %></td>
+                <td>$<%= booking.item.price%></td>
             </tr>
         <% end %>
     <% end %>
-  </tbody>
 </table>
 <br><br><br>
 
 <h3>Sold Items</h3>
 
 <table class="table">
-  <thead>
     <tr>
-      <th scope="col">#ID</th>
-      <th scope="col">Name Item</th>
-      <th scope="col">Seller</th>
-      <th scope="col">Buyer</th>
+      <th >Bike</th>
+      <th >Buyer</th>
+      <th >Price</th>
     </tr>
-  </thead>
-  <tbody>
     <% @bookings.each do |booking| %>
-        <%if booking.item.user.id == current_user.id %>
+        <%if booking.item.user.id == current_user.id  %>
             <tr>
-                <th scope="row"> <%= booking.id  %><th>
-                <td> <%= booking.item.name%><td>
-                <td> <%= booking.item.user.username%><td>
-                <td> <%= booking.user.username%><td>
+                <td><%= booking.item.name %></td>
+                <td><%= booking.user.username %></td>
+                <td>$<%= booking.item.price%></td>
             </tr>
         <% end %>
     <% end %>
-  </tbody>
 </table>

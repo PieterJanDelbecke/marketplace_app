@@ -1,25 +1,27 @@
 <%= item.errors.full_messages.first if item.errors.any? %>
 <%= form_with model: item do |form|%>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-    <br><br>
-    <%= form.label :description %>
+    <h6>Name Item:<h6>
+    <%= form.text_field :name%>
+    <p>min 10 characters<p>
+    <h6>Description of Item:<h6>
     <%= form.text_area :description, size: "60x10" %>
-    <br><br>
-    <%= form.label :price %>
+    <p>min 50 characters<p>
+    <h6>Price:<h6>
     <%= form.number_field :price, min: 1 %>
-    <br><br>
+    <br>
+    <h6>State:<h6>
     <%= form.select :new, [["Second hand", 0],["New",1]] %>
- 
-    <br><br>
-    <%= form.label :picture %>
+    <br>
+    <h6>Picture:<h6>
     <%= form.file_field :picture, accept:'image/png,image/jpg,image/jpeg' %>
-    <br><br>
+    <br>
     <%= form.hidden_field :sold, value: 0 %>
-    <br><br>
+    <br>
     <%= form.submit%>
 <% end %>
-<br><br>
-<%= link_to 'Back', :back %>
+
+
+
+
 
 
