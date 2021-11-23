@@ -2,10 +2,10 @@
 <%= form_with model: item do |form|%>
     <h6>Name Item:<h6>
     <%= form.text_field :name%>
-    <p>min 10 characters<p>
+    <p class="sub-text">(min 10 characters)<p>
     <h6>Description of Item:<h6>
     <%= form.text_area :description, size: "60x10" %>
-    <p>min 50 characters<p>
+    <p class= "sub-text">(min 50 characters)<p>
     <h6>Price:<h6>
     <%= form.number_field :price, min: 1 %>
     <br>
@@ -19,6 +19,7 @@
     <br>
     <%= form.submit%>
 <% end %>
+<br><br><br>
 
 
 

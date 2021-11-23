@@ -31,27 +31,22 @@
           <%= detail_form.label :first_name %><br>
           <%= detail_form.text_field :first_name, autofocus: true %>
         </div>
-        <br>
         <div class="field">
           <%= detail_form.label :last_name %><br>
           <%= detail_form.text_field :last_name %>
         </div>
-        <br>
         <div class="field">
           <%= detail_form.label :street_number %><br />
           <%= detail_form.number_field :street_number, min: 1 %>
         </div>
-        <br>
         <div class="field">
           <%= detail_form.label :street_name %><br>
           <%= detail_form.text_field :street_name %>
         </div> 
-        <br> 
         <div class="field">
           <%= detail_form.label :suburb %><br>
           <%= detail_form.text_field :suburb %>
         </div>
-        <br>
         <div class="field">
           <%= detail_form.label :postcode %><br>
           <%= detail_form.number_field :postcode,  min:1, max: 9999 %>
@@ -60,7 +55,6 @@
         <div class="field">
           <%= detail_form.select :state, ["NSW","VIC","ACT","QLD","NT","SA","WA"] %>
         </div>
-        <br>
         <div class="field">
           <%= detail_form.label :phone_number %> <br>
           <%= detail_form.number_field :phone_number ,min: 1 %>
@@ -72,7 +66,6 @@
       <%= f.submit "Sign up" %>
     </div>
   <% end %>
-
-<%= render "devise/shared/links" %>
+  <br><br><br>
 
 
