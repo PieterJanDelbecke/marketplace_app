@@ -1,15 +1,15 @@
 <%= item.errors.full_messages.first if item.errors.any? %>
 <%= form_with model: item do |form|%>
-    <h6>Name Item:<h6>
-    <%= form.text_field :name%>
+    <h6>Name bike:<h6>
+    <%= form.text_field :name %>
     <p class="sub-text">(min 10 characters)<p>
-    <h6>Description of Item:<h6>
-    <%= form.text_area :description, size: "60x10" %>
-    <p class= "sub-text">(min 50 characters)<p>
+    <h6>Description of your bike:<h6>
+    <%= form.text_area :description, size: "50x7" %>
+    <p class= "sub-text">(min 30 - max 300 characters)<p>
     <h6>Price:<h6>
     <%= form.number_field :price, min: 1 %>
     <br>
-    <h6>State:<h6>
+    <h6>Condition:<h6>
     <%= form.select :new, [["Second hand", 0],["New",1]] %>
     <br>
     <h6>Picture:<h6>
@@ -17,7 +17,7 @@
     <br>
     <%= form.hidden_field :sold, value: 0 %>
     <br>
-    <%= form.submit%>
+    <%= form.submit %>
 <% end %>
 <br><br><br>
 

@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
     def index
         @bookings = Booking.all
+        @items = Item.all
     end
 
     def new

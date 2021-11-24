@@ -1,6 +1,44 @@
-<h1>Index bookings </h1>
+<h1>Your Orders Overview </h1>
 
-<h3>Bought Items</h3>
+<h3>Bikes for sale</h3>
+
+<table class="table">
+    <tr>
+      <th >Bike</th>
+      <th >Price</th>
+      <th></th>
+    </tr>
+    <% @items.each do |item| %>
+        <%if item.user.id == current_user.id && item.sold == 0  %>
+            <tr>
+                <td><%= item.name %></td>
+                <td>$<%= item.price %></td>
+                <td> <%= link_to "edit", item, class: "btn btn-primary btn-sm" %>
+            </tr>
+        <% end %>
+    <% end %>
+</table>
+
+<h3>Bikes sold</h3>
+
+<table class="table">
+    <tr>
+      <th >Bike</th>
+      <th >Buyer</th>
+      <th >Price</th>
+    </tr>
+    <% @bookings.each do |booking| %>
+        <%if booking.item.user.id == current_user.id  %>
+            <tr>
+                <td><%= booking.item.name %></td>
+                <td><%= booking.user.username %></td>
+                <td>$<%= booking.item.price%></td>
+            </tr>
+        <% end %>
+    <% end %>
+</table>
+
+<h3>Bikes Bought</h3>
 
 <table class="table">
     <tr>
@@ -20,21 +58,4 @@
 </table>
 <br><br><br>
 
-<h3>Sold Items</h3>
 
-<table class="table">
-    <tr>
-      <th >Bike</th>
-      <th >Buyer</th>
-      <th >Price</th>
-    </tr>
-    <% @bookings.each do |booking| %>
-        <%if booking.item.user.id == current_user.id  %>
-            <tr>
-                <td><%= booking.item.name %></td>
-                <td><%= booking.user.username %></td>
-                <td>$<%= booking.item.price%></td>
-            </tr>
-        <% end %>
-    <% end %>
-</table>
