@@ -10,7 +10,6 @@
                     <% end %>
                     <div class="card-body">
                         <h5 class="card-title"><%= item.name %></h5>
-                        <p class="card-text item-description"><%= item.description.first(100)+" ..."%></p>
                         <% if item[:new] == 1 %>
                         <p class="card-text item-description">Brand new bike</p>
                         <% else %>
