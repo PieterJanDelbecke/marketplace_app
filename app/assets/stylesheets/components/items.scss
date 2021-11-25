@@ -5,8 +5,11 @@
 .btn-right{
     float: right;
 }
+.item-condition{
+    min-height: 40px;
+}
 .item-description{
-    min-height: 60px;
+    color: #444444;
 }
 
 .card-background{
@@ -15,6 +18,9 @@
 }
 
 .sub-text {
-    color: #444444;
+    // color: #9D9D9D;
     font-style: italic;
+}
+.card-margin{
+    margin: 0.5rem;
 }

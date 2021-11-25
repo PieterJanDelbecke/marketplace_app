@@ -3,7 +3,7 @@
 <div class="row">
     <% @items.each do |item| %>
         <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+            <div class="card card-margin" style="width: 18rem;">
                 <div class="card-background">
                     <% if item.picture.attached? %>
                     <%= image_tag item.picture, class:"card-img-top"%>
@@ -11,14 +11,16 @@
                     <div class="card-body">
                         <h5 class="card-title"><%= item.name %></h5>
                         <% if item[:new] == 1 %>
-                        <p class="card-text item-description">Brand new bike</p>
+                        <p class="card-text item-condition">Brand new bike</p>
                         <% else %>
-                        <p class="card-text item-description">Second hand bike</p>
+                        <p class="card-text item-condition">Second hand bike</p>
                         <% end %>
+                        <p class="card-text item-description"><%= item.description.first(80) + " ..." %></p><br>
                         <p class="card-text">$<%= item.price %><%= link_to 'Show', item , class: "btn btn-primary btn-right" %></p>
                     </div>
                 </div>
             </div>
         </div>
+        <br>
     <% end %>
 </div>
