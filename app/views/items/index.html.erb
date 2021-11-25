@@ -2,25 +2,28 @@
 <h1>Index Items Page </h1>
 <div class="row">
     <% @items.each do |item| %>
-        <div class="col-md-4">
-            <div class="card card-margin" style="width: 18rem;">
-                <div class="card-background">
-                    <% if item.picture.attached? %>
-                    <%= image_tag item.picture, class:"card-img-top"%>
-                    <% end %>
-                    <div class="card-body">
-                        <h5 class="card-title"><%= item.name %></h5>
-                        <% if item[:new] == 1 %>
-                        <p class="card-text item-condition">Brand new bike</p>
-                        <% else %>
-                        <p class="card-text item-condition">Second hand bike</p>
+        <% if item.sold == 0 %>
+            <div class="col-md-4">
+                <div class="card card-margin" style="width: 18rem;">
+                    <div class="card-background">
+                        <% if item.picture.attached? %>
+                        <%= image_tag item.picture, class:"card-img-top"%>
                         <% end %>
-                        <p class="card-text item-description"><%= item.description.first(80) + " ..." %></p><br>
-                        <p class="card-text">$<%= item.price %><%= link_to 'Show', item , class: "btn btn-primary btn-right" %></p>
+                        <div class="card-body">
+                            <h5 class="card-title"><%= item.name %></h5>
+                            <% if item[:new] == 1 %>
+                            <p class="card-text item-condition">Brand new bike</p>
+                            <% else %>
+                            <p class="card-text item-condition">Second hand bike</p>
+                            <% end %>
+                            <p class="card-text item-description"><%= item.description.first(100) + " ..." %></p><br>
+                            <p class="card-text">$<%= item.price %><%= link_to 'Show', item , class: "btn btn-primary btn-right" %></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <% end %>
         <br>
     <% end %>
 </div>
+ 
