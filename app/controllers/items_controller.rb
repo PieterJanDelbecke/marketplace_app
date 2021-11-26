@@ -1,17 +1,17 @@
 class ItemsController < ApplicationController
     before_action :authenticate_user!, only: %i[new edit destroy]
     before_action :set_item, only: %i[ show edit update destroy ]
-    # before_action :set_current_item, only: %i[ show edit update destroy ]
-    # before_action :set_state_bike
+ 
 
     def landings_page
     end
-    # GET /items or /items.json
+
+    # GET /items
     def index
       @items = Item.all
     end
   
-    # GET /items/1 or /items/1.json
+    # GET /items/1 
     def show
     end
   
@@ -82,11 +82,4 @@ class ItemsController < ApplicationController
         params.require(:item).permit(:name, :description, :price, :new, :sold, :user_id, :picture)
       end
 
-      # def set_state_bike
-      #   @news = Item.news.keys
-      # end
-
-    # def set_current_item
-    #     @current_item = Item.find(params[:id])
-    # end
 end

@@ -1,3 +1,5 @@
+<%# form for a new listing, or editing an existing listing %>
+
 <%= item.errors.full_messages.first if item.errors.any? %>
 <%= form_with model: item do |form|%>
     <h6>Name bike:<h6>
